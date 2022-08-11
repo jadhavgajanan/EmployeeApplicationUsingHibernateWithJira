@@ -44,7 +44,7 @@ public class EmployeeController {
 		}
 	}
 	@PutMapping(value="/updateEmployee",consumes="application/json")
-	public ResponseEntity<Employee> updateEmployee(Employee employee){
+	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee){
 		Employee updateEmployee = employeeServiceI.updateEmployee(employee);
 		return new ResponseEntity<Employee>(updateEmployee,HttpStatus.OK);	
 	}
